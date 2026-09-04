@@ -80,7 +80,7 @@ The backend API provides RESTful endpoints for:
 - Category management
 
 ## CI/CD Workflows (GitHub Actions)
-<img src="" />
+<img src="https://github.com/Kegow-cyber/Race-Day/blob/main/docs/CI-CD.png" />
 
 ## References
 GitHub Copilot was used in some stages of writing this README file.
