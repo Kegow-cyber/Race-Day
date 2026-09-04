@@ -79,4 +79,9 @@ The backend API provides RESTful endpoints for:
 - Results submission and retrieval
 - Category management
 
-## Project Structure
+## CI/CD Workflows (GitHub Actions)
+<img src="" />
+
+## References
+GitHub Copilot was used in some stages of writing this README file.
+
