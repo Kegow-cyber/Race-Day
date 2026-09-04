@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# Workflow to check project structure and docs folder
 
 name: CI
 
@@ -25,12 +25,23 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # Check if docs folder exists
+      - name: Check if docs folder exists
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          if [ -d "docs" ]; then
+            echo "✓ docs folder exists"
+          else
+            echo "✗ docs folder does not exist"
+            exit 1
+          fi
+
+      # Check if all files in docs folder exist
+      - name: Verify docs folder is not empty
+        run: |
+          if [ -z "$(ls -A docs)" ]; then
+            echo "✗ docs folder is empty"
+            exit 1
+          else
+            echo "✓ docs folder contains files:"
+            ls -la docs
+          fi
